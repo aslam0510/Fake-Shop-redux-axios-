@@ -3,7 +3,7 @@ import React , { useEffect}from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useParams , Link} from 'react-router-dom';
-import { selectedProduct } from '../Redux/Actions/ProductAction';
+import { selectedProduct, removeSelectedProduct } from '../Redux/Actions/ProductAction';
 
 const ProductDetail = () => {
   const product = useSelector(state =>state.product)
@@ -12,7 +12,10 @@ const ProductDetail = () => {
   console.log(product);
 
    useEffect(() => {
-     if(id && id !=='') fetchSelectedProduct()
+     if(id && id !=='') fetchSelectedProduct();
+     return ()=>{
+      dispatch(removeSelectedProduct())
+     }
    }, [id]);
    
   const fetchSelectedProduct = async () =>{
@@ -39,7 +42,7 @@ const ProductDetail = () => {
             <h2><a className="ui teal tag label">${product.price}</a></h2>
             <h3 className="ui brown block header">{product.category}</h3>
             <p>{product.description}</p>
-            <div className="ui vertical animated  button" tabIndex="0">
+            <div className="ui vertical animated button primary" tabIndex="0">
               <div className="hidden content">
                 <i className="shop icon"></i>
               </div>

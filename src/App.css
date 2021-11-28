@@ -15,3 +15,14 @@
  bottom: 3rem;
  
 }
+
+.ui.card{
+  margin:1rem;
+  padding:1rem;
+  width: 350px;
+  
+}
+
+.ui.card>.image>img, .ui.cards>.card>.image>img {
+  height: 350px;
+}
