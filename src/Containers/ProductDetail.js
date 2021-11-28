@@ -16,7 +16,7 @@ const ProductDetail = () => {
      return ()=>{
       dispatch(removeSelectedProduct())
      }
-   }, []);
+   }, [id]);
    
   const fetchSelectedProduct = async () =>{
     const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
