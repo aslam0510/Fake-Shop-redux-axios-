@@ -8,12 +8,11 @@ import { setProducts } from './../Redux/Actions/ProductAction';
 
 
 const ProductList = () => {
-
   const dispatch = useDispatch();
 
   useEffect(()=>{
     fetchProducts()
-  },[]);
+  });
 
   const fetchProducts = async() =>{
     const response = await axios.get('https://fakestoreapi.com/products').catch(err =>{
