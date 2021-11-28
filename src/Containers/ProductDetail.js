@@ -39,7 +39,7 @@ const ProductDetail = () => {
             <div className="column rp">
               <h1>{product.title}</h1>
             
-            <h2><a className="ui teal tag label">${product.price}</a></h2>
+            <h2><p className="ui teal tag label">${product.price}</p></h2>
             <h3 className="ui brown block header">{product.category}</h3>
             <p>{product.description}</p>
             <div className="ui vertical animated button primary" tabIndex="0">
